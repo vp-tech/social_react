@@ -1,8 +1,3 @@
-.content{
-    grid-area: content;
-    background-color: #676767;
-}
-
 .item{
     color: #47ffe5;
     padding-left: 1em;
