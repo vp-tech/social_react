@@ -7,6 +7,9 @@
 .item {
     color: #ffffff;
 }
+a{
+    color: white;
+}
 .item.active{
     color: goldenrod;
 }

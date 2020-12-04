@@ -4,6 +4,7 @@ import MyPosts from "./Posts/MyPosts";
 
 const Profile = () =>{
     return <div>
+        <h1>Profile</h1>
         <div>
             <img src='https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg' alt='background'/>
         </div>
