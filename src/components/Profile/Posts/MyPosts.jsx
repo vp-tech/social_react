@@ -3,14 +3,13 @@ import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
 const MyPosts = () => {
-    return <div>
+    return <div className={s.postsBlock}>
     <div>
-        My posts
+        <h3>My posts</h3>
         <div>
-            New posts
-            <textarea></textarea>
-            <button>Add post</button>
-            <button>Remove</button>
+            <div>New posts</div>
+            <div><textarea></textarea></div>
+            <div><button>Add post</button></div>
         </div>
     </div>
     <div className={s.posts}>
