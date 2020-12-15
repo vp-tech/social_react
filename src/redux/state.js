@@ -2,7 +2,6 @@ let state = {
 
 
     profilePage: {
-
         posts: [
             {id: 1, post: 'Hi, how are you?', likeCount: 11},
             {id: 2, post: 'My better trip, start soon!!!', likeCount: 42},
@@ -13,7 +12,6 @@ let state = {
             {id: 7, post: 'it was too easy', likeCount: 8},
             {id: 8, post: 'i do IT', likeCount: 14}
         ]
-
     },
 
 
@@ -33,6 +31,14 @@ let state = {
             {id: 4, message: 'Lorem ipsum dolor sit amet.',from: 'q'},
             {id: 5, message: 'Hi there', from: 'i'},
             {id: 6, message: 'Surprise for you', from: 'q'}
+        ]
+    },
+
+    sidebar: {
+        my_friends: [
+            {id: 1, name: 'user1'},
+            {id: 2, name: 'user2'},
+            {id: 3, name: 'user3'}
         ]
     }
 

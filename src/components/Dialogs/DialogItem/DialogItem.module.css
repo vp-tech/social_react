@@ -6,14 +6,12 @@
     margin-bottom: 10px;
 }
 
-
-
 .dialog__ava img{
     width: 70px;
     height: 70px;
 }
 
-.activeLink {
+.dialog a.activeLink {
     color: gold;
 }
 

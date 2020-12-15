@@ -12,7 +12,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Nav/>
+                <Nav state={props.state.sidebar}/>
                 <div className='app-wrapper-content'>
 
                     <Route path='/dialogs'
@@ -22,10 +22,6 @@ const App = (props) => {
                            render={() =>
                                <Profile state={props.state.profilePage}/>}/>
 
-
-                    <Route path='/news' component={Profile}/>
-                    <Route path='/music' component={Profile}/>
-                    <Route path='/settings' component={Profile}/>
 
                 </div>
             </div>
