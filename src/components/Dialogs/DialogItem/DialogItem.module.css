@@ -1,6 +1,19 @@
-.dialogs_items {
+.dialog {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     padding: 10px;
+    background-color: #2a9d8f ;
+    margin-bottom: 10px;
 }
-.dialog{
 
+
+
+.dialog__ava img{
+    width: 70px;
+    height: 70px;
 }
+
+.activeLink {
+    color: gold;
+}
+

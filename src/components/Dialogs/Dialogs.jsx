@@ -10,17 +10,16 @@ const Dialogs = (props) => {
     })
 
     let MessageElements = props.state.message.map(message => {
-        return <Message message={message.message}/>
+        return <Message message={message.message} from={message.from}/>
     })
 
     return <div className={s.title}>
         <h1>Dialogs</h1>
-        <div className={s.dialogs}>
-
-            <div className={s.dialogs_items}>
+        <div className={s.dialogs }>
+            <div className={s.dialogs__items}>
                 {dialogsElements}
             </div>
-            <div className={s.messages}>
+            <div className={s.messages_back}>
                 {MessageElements}
             </div>
         </div>

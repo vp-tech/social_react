@@ -27,12 +27,12 @@ let state = {
             {id: 6, name: 'user6'}
         ],
         message: [
-            {id: 1, message: 'hi'},
-            {id: 2, message: 'How are you'},
-            {id: 3, message: 'lorem dolor'},
-            {id: 4, message: 'Lorem ipsum dolor sit amet.'},
-            {id: 5, message: 'Hi there'},
-            {id: 6, message: 'Surprise for you'}
+            {id: 1, message: 'hi', from: 'i'},
+            {id: 2, message: 'How are you', from: 'q'},
+            {id: 3, message: 'lorem dolor', from: 'i'},
+            {id: 4, message: 'Lorem ipsum dolor sit amet.',from: 'q'},
+            {id: 5, message: 'Hi there', from: 'i'},
+            {id: 6, message: 'Surprise for you', from: 'q'}
         ]
     }
 

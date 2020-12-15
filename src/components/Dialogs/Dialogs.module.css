@@ -4,13 +4,18 @@
 
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 2fr 4fr;
+
 }
 
-.dialogs_items .active {
+.dialogs__items{
+    padding: 10px;
+    background-color: #264653;
+}
+.dialogs__items.active {
     color: gold;
 }
-.messages {
-    padding: 10px;
-}
 
+.messages_back{
+    background-color: white;
+}
