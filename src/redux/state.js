@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
 
 
@@ -11,7 +13,8 @@ let state = {
             {id: 6, post: 'Surprise for you', likeCount: 14},
             {id: 7, post: 'it was too easy', likeCount: 8},
             {id: 8, post: 'i do IT', likeCount: 14}
-        ]
+        ],
+        newPostText : 'New Post Text.'
     },
 
 
@@ -42,6 +45,22 @@ let state = {
         ]
     }
 
+}
+
+export let addPost = () => {
+    let newPost = {
+        id: 9,
+        post: state.profilePage.newPostText,
+        likeCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText= ''
+    rerenderEntireTree(state)
+}
+
+export let updatePostText = (newText) => {
+    state.profilePage.newPostText = newText
+    rerenderEntireTree(state)
 }
 
 export default state
