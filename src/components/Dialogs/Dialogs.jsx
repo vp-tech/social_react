@@ -2,29 +2,28 @@ import React from 'react'
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import Message from "./Message/Message";
-import {addMessageActionCreater, updateMessageTextActionCreator} from "../../redux/state";
+import {addMessageActionCreater, updateMessageTextActionCreator} from "../../redux/dialogs-reduser";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialog.map(dialog => {
+    let state = props.store.getState().dialogsPage
+
+    let dialogsElements = state.dialog.map(dialog => {
         return <DialogItem name={dialog.name} id={dialog.id}/>
     })
-
-    let MessageElements = props.state.message.map(message => {
+    let MessageElements = state.message.map(message => {
         return <Message message={message.message} from={message.from}/>
     })
+    let newMessageText = state.newMessageText
 
-
-    let messageArea = React.createRef()
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreater())
+        props.store.dispatch(addMessageActionCreater())
     }
-
-    let updateMessageText = () => {
-        let text = messageArea.current.value
-        //props.updateMessageText(text)
-        props.dispatch(updateMessageTextActionCreator(text))
+    let updateMessageText = (event) => {
+        //target в данном случае textarea которая вызываетэту функцию
+        let text = event.target.value
+        props.store.dispatch(updateMessageTextActionCreator(text))
     }
 
 
@@ -34,14 +33,19 @@ const Dialogs = (props) => {
             <div className={s.dialogs__items}>
                 {dialogsElements}
             </div>
+
             <div className={s.messages_back}>
                 {MessageElements}
-                <textarea ref={messageArea}
-                          onChange={updateMessageText}
-                          cols='90' rows='4'
-                          value={props.newMessageText}
-                />
-                <button onClick={addMessage}>Send</button>
+                <div><textarea value={newMessageText}
+                               placeholder={'Enter Your Message'}
+                               onChange={updateMessageText}
+                               cols='90' rows='4'
+
+                    />
+                </div>
+                <div>
+                    <button onClick={addMessage}>Send</button>
+                </div>
             </div>
         </div>
     </div>
