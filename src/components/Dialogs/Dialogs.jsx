@@ -2,11 +2,9 @@ import React from 'react'
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import Message from "./Message/Message";
-import {addMessageActionCreater, updateMessageTextActionCreator} from "../../redux/dialogs-reduser";
-
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage
+    let state = props.dialogsPage
 
     let dialogsElements = state.dialog.map(dialog => {
         return <DialogItem name={dialog.name} id={dialog.id}/>
@@ -17,13 +15,13 @@ const Dialogs = (props) => {
     let newMessageText = state.newMessageText
 
 
-    let addMessage = () => {
-        props.store.dispatch(addMessageActionCreater())
+    let onAddMessage = () => {
+        props.sendMessage()
     }
     let updateMessageText = (event) => {
         //target в данном случае textarea которая вызываетэту функцию
         let text = event.target.value
-        props.store.dispatch(updateMessageTextActionCreator(text))
+        props.updateMessageBody(text)
     }
 
 
@@ -44,7 +42,7 @@ const Dialogs = (props) => {
                     />
                 </div>
                 <div>
-                    <button onClick={addMessage}>Send</button>
+                    <button onClick={onAddMessage}>Send</button>
                 </div>
             </div>
         </div>
