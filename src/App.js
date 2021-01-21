@@ -2,28 +2,24 @@ import logo from './logo.svg';
 import React from 'react'
 import './App.css';
 import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import Profile from "./components/Profile/Profile"; 
+import Nav from "./components/Nav/NavContainer";
+import Profile from "./components/Profile/Profile";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className="app-wrapper">
             <Header/>
-            <Nav state={props.state.sidebar}/>
+            <Nav />
             <div className='app-wrapper-content'>
 
                 <Route path='/dialogs'
                        render={() =>
-                           <DialogsContainer
-                               store={props.store}
-                           />}/>
+                           <DialogsContainer />}/>
                 <Route path='/profile'
                        render={() =>
-                           <Profile
-                               store = {props.store}
-                           />}/>
+                           <Profile />}/>
             </div>
         </div>
     );
