@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './Nav'
 import {connect} from "react-redux";
+import sidebarReducer from "../../redux/sidebar-reduser";
 
 
 const mapStateToProps = (state) => {
